@@ -1,6 +1,7 @@
 # Project-specific folders and file
 data/
 models/
+wandb/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
