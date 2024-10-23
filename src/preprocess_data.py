@@ -48,7 +48,7 @@ def get_args() -> argparse.Namespace:
     )
     # Parse the arguments
     args = parser.parse_args()
-    # Handle dynamic default for `target_text_file_path` based on `data_ckpt`
+    # Handle dynamic default for `processed_data_file_path` based on `data_ckpt`
     if args.processed_data_file_path == pathlib.Path(f"data/{{data_ckpt}}.csv"):
         args.processed_data_file_path = pathlib.Path(f"data/{args.data_ckpt}.csv")
     return args
