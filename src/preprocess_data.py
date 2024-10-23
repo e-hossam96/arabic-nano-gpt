@@ -149,7 +149,7 @@ def main(args: argparse.Namespace) -> None:
         sentences.extend(art)
     print(f"Total Number of Sentences (Docs): {len(sentences)}")
     args.processed_data_file_path.parent.mkdir(parents=True, exist_ok=True)
-    sentences = pd.DataFrame.from_dict({'text': sentences})
+    sentences = pd.DataFrame.from_dict({"text": sentences})
     sentences.to_csv(args.processed_data_file_path, index=False)
     print("Finished Preprocessing")
 
