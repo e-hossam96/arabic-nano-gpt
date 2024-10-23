@@ -42,14 +42,14 @@ def get_args() -> argparse.Namespace:
     parser.add_argument(
         "--target_text_file_path",
         type=pathlib.Path,
-        default=pathlib.Path(f"../data/{{data_ckpt}}.txt"),
-        help="Path to the target text file. (Default: '../data/{data_ckpt}.txt')",
+        default=pathlib.Path(f"data/{{data_ckpt}}.txt"),
+        help="Path to the target text file. (Default: 'data/{data_ckpt}.txt')",
     )
     # Parse the arguments
     args = parser.parse_args()
     # Handle dynamic default for `target_text_file_path` based on `data_ckpt`
-    if args.target_text_file_path == pathlib.Path(f"../data/{{data_ckpt}}.txt"):
-        args.target_text_file_path = pathlib.Path(f"../data/{args.data_ckpt}.txt")
+    if args.target_text_file_path == pathlib.Path(f"data/{{data_ckpt}}.txt"):
+        args.target_text_file_path = pathlib.Path(f"data/{args.data_ckpt}.txt")
     return args
 
 
@@ -147,6 +147,7 @@ def main(args: argparse.Namespace) -> None:
     for art in dataset["sentences"]:
         sentences.extend(art)
     print(f"Total Number of Sentences (Docs): {len(sentences)}")
+    args.target_text_file_path.parent.mkdir(parents=True, exist_ok=True)
     with open(args.target_text_file_path, "w+") as f:
         f.writelines(sentences)
     print("Finished Preprocessing")
