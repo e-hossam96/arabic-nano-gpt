@@ -20,13 +20,13 @@ def get_args() -> argparse.Namespace:
         "--data_ckpt",
         type=str,
         default="wikimedia/wikipedia",
-        help="Checkpoint for the dataset. (default: None)",
+        help="Checkpoint for the dataset. (default: 'wikimedia/wikipedia')",
     )
     parser.add_argument(
         "--sub_data",
         type=str,
         default="20231101.ar",
-        help="Sub-dataset name. (default: None)",
+        help="Sub-dataset name. (default: '20231101.ar')",
     )
     parser.add_argument(
         "--split_name",
