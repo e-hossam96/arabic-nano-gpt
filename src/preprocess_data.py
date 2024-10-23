@@ -41,16 +41,16 @@ def get_args() -> argparse.Namespace:
         help="Size of the dataset split. (default: '')",
     )
     parser.add_argument(
-        "--target_text_file_path",
+        "--processed_data_file_path",
         type=pathlib.Path,
         default=pathlib.Path(f"data/{{data_ckpt}}.csv"),
-        help="Path to the target text file. (Default: 'data/{data_ckpt}.csv')",
+        help="Path to the processed data CSV file. (Default: 'data/{data_ckpt}.csv')",
     )
     # Parse the arguments
     args = parser.parse_args()
     # Handle dynamic default for `target_text_file_path` based on `data_ckpt`
-    if args.target_text_file_path == pathlib.Path(f"data/{{data_ckpt}}.csv"):
-        args.target_text_file_path = pathlib.Path(f"data/{args.data_ckpt}.csv")
+    if args.processed_data_file_path == pathlib.Path(f"data/{{data_ckpt}}.csv"):
+        args.processed_data_file_path = pathlib.Path(f"data/{args.data_ckpt}.csv")
     return args
 
 
@@ -148,9 +148,9 @@ def main(args: argparse.Namespace) -> None:
     for art in dataset["sentences"]:
         sentences.extend(art)
     print(f"Total Number of Sentences (Docs): {len(sentences)}")
-    args.target_text_file_path.parent.mkdir(parents=True, exist_ok=True)
+    args.processed_data_file_path.parent.mkdir(parents=True, exist_ok=True)
     sentences = pd.DataFrame.from_dict({'text': sentences})
-    sentences.to_csv(args.target_text_file_path, index=False)
+    sentences.to_csv(args.processed_data_file_path, index=False)
     print("Finished Preprocessing")
 
 
