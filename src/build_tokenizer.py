@@ -29,7 +29,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument(
         "--processed_data_file_path",
         type=pathlib.Path,
-        default=pathlib.Path(f"data/wikimedia/wikipedia.csv"),
+        default=pathlib.Path(f"data/{{data_ckpt}}.csv"),
         help="Path to the processed data CSV file. (Default: 'data/{data_ckpt}.csv')",
     )
     parser.add_argument(
