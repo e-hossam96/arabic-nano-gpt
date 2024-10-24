@@ -173,9 +173,9 @@ def get_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--tags",
-        type=list,
-        default=list(),
-        help="Notes for current run. (Default: '[]')",
+        type=str,
+        default="",
+        help="Notes for current run. (Default: '')",
     )
     parser.add_argument(
         "--config",
@@ -314,7 +314,7 @@ def main(args: argparse.Namespace) -> None:
         job_type=args.job_type,
         name=args.run_name,
         notes=args.notes,
-        tags=args.tags,
+        tags=args.tags.split(","),
         config=args.config,
     )
     _ = trainer.train()
@@ -326,5 +326,4 @@ def main(args: argparse.Namespace) -> None:
 
 if __name__ == "__main__":
     args = get_args()
-    print(args)
     main(args)
