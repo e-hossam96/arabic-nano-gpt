@@ -23,6 +23,7 @@ from transformers import (
     DataCollatorForLanguageModeling,
     TrainingArguments,
     Trainer,
+    EarlyStoppingCallback,
 )
 
 
@@ -290,7 +291,7 @@ def main(args: argparse.Namespace) -> None:
         output_dir=args.target_model_path,
         run_name=args.run_name,
         report_to="wandb",
-        save_strategy="no",
+        save_strategy="steps",
         eval_strategy="steps",
         gradient_accumulation_steps=args.accum_steps,
         overwrite_output_dir=True,
@@ -302,6 +303,8 @@ def main(args: argparse.Namespace) -> None:
         eval_steps=args.eval_steps,
         logging_steps=args.log_steps,
         log_level="error",
+        save_total_limit=5,
+        load_best_model_at_end=True,
         torch_compile=args.torch_compile,
         num_train_epochs=args.num_epochs,
         per_device_train_batch_size=args.batch_size,
@@ -316,6 +319,7 @@ def main(args: argparse.Namespace) -> None:
         eval_dataset=tokenized_dataset["valid"],
         data_collator=data_collator,
         tokenizer=tokenizer,
+        callbacks=[EarlyStoppingCallback(early_stopping_patience=5),
     )
     run = wandb.init(
         project=args.project_name,
