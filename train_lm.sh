@@ -7,4 +7,5 @@ python src/train_causal_lm.py \
     --lr=1e-3 \
     --run_name="Arabic-NanoGPT-LM-on-200K-Docs" \
     --notes="LM Training on Arabic Data using Nano GPT2 Model Architecture" \
-    --tags="Modeling,Transformers,GPT2,Language-Modeling,Arabic"
+    --tags="Modeling,Transformers,GPT2,Language-Modeling,Arabic" \
+    --torch_compile
