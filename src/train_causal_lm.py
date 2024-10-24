@@ -305,7 +305,7 @@ def main(args: argparse.Namespace) -> None:
         torch_compile=args.torch_compile,
         num_train_epochs=args.num_epochs,
         per_device_train_batch_size=args.batch_size,
-        per_device_eval_batch_size=args.batch_size * 2,
+        per_device_eval_batch_size=args.batch_size,
     )
     data_collator = DataCollatorForLanguageModeling(tokenizer, mlm=False)
     tokenizer.pad_token = tokenizer.eos_token
