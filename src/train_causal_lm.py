@@ -196,7 +196,7 @@ def get_args() -> argparse.Namespace:
     return args
 
 
-def tokenize_batch(batch: list[dict], tokenizer: PreTrainedTokenizerFast) -> dict:
+def tokenize_batch(batch: dict, tokenizer: PreTrainedTokenizerFast) -> dict:
     outputs = tokenizer(
         batch["text"],
         truncation=True,
