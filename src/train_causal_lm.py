@@ -292,6 +292,7 @@ def main(args: argparse.Namespace) -> None:
         run_name=args.run_name,
         report_to="wandb",
         save_strategy="steps",
+        save_steps=args.eval_steps,
         eval_strategy="steps",
         gradient_accumulation_steps=args.accum_steps,
         overwrite_output_dir=True,
