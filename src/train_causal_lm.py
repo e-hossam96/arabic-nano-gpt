@@ -146,6 +146,13 @@ def get_args() -> argparse.Namespace:
         default=100,
         help="Logging steps. (default: 100)",
     )
+    parser.add_argument(
+        "--torch_compile",
+        type=bool,
+        default=False,
+        action="store_true",
+        help="Whether or not to use torch compile. (default: False)",
+    )
     # wandb argument
     parser.add_argument(
         "--project_name",
@@ -295,6 +302,7 @@ def main(args: argparse.Namespace) -> None:
         eval_steps=args.eval_steps,
         logging_steps=args.log_steps,
         log_level="error",
+        torch_compile=args.torch_compile,
         num_train_epochs=args.num_epochs,
         per_device_train_batch_size=args.batch_size,
         per_device_eval_batch_size=args.batch_size * 2,
@@ -326,4 +334,5 @@ def main(args: argparse.Namespace) -> None:
 
 if __name__ == "__main__":
     args = get_args()
+    print(args)
     main(args)
