@@ -148,7 +148,7 @@ def get_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--torch_compile",
-        type=bool,
+        # type=bool,
         default=False,
         action="store_true",
         help="Whether or not to use torch compile. (default: False)",
