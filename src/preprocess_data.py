@@ -2,6 +2,7 @@
 Loading and preprocessing Arabic Wikipedia Dump from Wikimedia Datasets.
 """
 
+import os
 import re
 import pathlib
 import argparse
@@ -64,7 +65,7 @@ def main(args: argparse.Namespace) -> None:
     dataset = dataset.map(
         lambda x: {"sentences": [s.split("\n\n") for s in x["text"]]},
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="Sentence Splitting",
     )
     print(dataset)
@@ -76,7 +77,7 @@ def main(args: argparse.Namespace) -> None:
             ]
         },
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="Stripping Tashkeel",
     )
     print(dataset)
@@ -89,7 +90,7 @@ def main(args: argparse.Namespace) -> None:
             ]
         },
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="Space-Padding Punctuations",
     )
     print(dataset)
@@ -101,7 +102,7 @@ def main(args: argparse.Namespace) -> None:
             ]
         },
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="One-Space Processing",
     )
     print(dataset)
@@ -111,7 +112,7 @@ def main(args: argparse.Namespace) -> None:
             "sentences_length": [[len(s) for s in art] for art in x["sentences"]]
         },
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="Calc Sents Lengths",
     )
     print(dataset)
@@ -130,7 +131,7 @@ def main(args: argparse.Namespace) -> None:
     dataset = dataset.map(
         filter_sentences,
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         remove_columns=["sentences_length"],
         desc="Filtering Sentences",
     )
@@ -139,7 +140,7 @@ def main(args: argparse.Namespace) -> None:
     dataset = dataset.filter(
         lambda x: [num_sents != 0 for num_sents in x["num_sentences"]],
         batched=True,
-        num_proc=16,
+        num_proc=os.cpu_count(),
         desc="No-Sents Filtering",
     )
     print(dataset)
