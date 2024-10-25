@@ -320,7 +320,7 @@ def main(args: argparse.Namespace) -> None:
         eval_dataset=tokenized_dataset["valid"],
         data_collator=data_collator,
         tokenizer=tokenizer,
-        callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
+        # callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
     )
     run = wandb.init(
         project=args.project_name,
