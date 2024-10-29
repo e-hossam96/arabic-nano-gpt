@@ -18,20 +18,19 @@ NUM_ATT_HEAD=6
 NUM_ATT_LAYERS=8
 
 # training config
-NUM_EPOCHS=200
-BATCH_SIZE=16
-ACCUM_STEPS=1
-EVAL_STEPS=100
-LOG_STEPS=20
-LR=0.0006
-WD=0.0
-WARMUP=0.0
+NUM_EPOCHS=5
+BATCH_SIZE=32
+ACCUM_STEPS=8
+EVAL_STEPS=1000
+LOG_STEPS=400
+LR=0.0001
+WD=0.000001
+WARMUP=0.001
 
 # weights & biases config
 PROJECT_NAME=Arabic-Nano-GPT
-JOB_TYPE=LM-Pretraining
-# RUN_NAME=Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V2
-RUN_NAME=Overfitting-Small-Batch
+JOB_TYPE=LM-Modeling
+RUN_NAME=Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V2
 NOTES="LM Training on Arabic Data using Nano GPT2 Model Architecture"
 TAGS=Modeling,Transformers,GPT2,Language-Modeling,Arabic-Wikipedia
 
@@ -66,5 +65,4 @@ python src/train_causal_lm.py \
     --model_name=$MODEL_NAME \
     --run_name=$RUN_NAME \
     --notes="$NOTES" \
-    --tags=$TAGS \
-    --split_size=100
+    --tags=$TAGS
