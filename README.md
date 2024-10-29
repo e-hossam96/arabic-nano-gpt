@@ -126,3 +126,19 @@ trainer = Trainer(
 ```
 
 Once validated, you can remove the `SPLIT_SIZE` parameter, re-define the training configurations to match the full data training, and run the codes safely.
+
+## Data Pre-processing
+
+## Tokenization
+
+## GPT2-Based Models
+
+## Performance Comparison
+
+## Conclusions
+
+## Credits
+
+## License
+
+MIT
