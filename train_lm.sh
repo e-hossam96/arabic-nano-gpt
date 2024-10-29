@@ -21,9 +21,18 @@ NUM_ATT_LAYERS=8
 NUM_EPOCHS=1
 BATCH_SIZE=32
 ACCUM_STEPS=8
+EVAL_STEPS=100
+LOG_STEPS=100
 LR=0.0001
 WD=0.000001
 WARMUP=0.0
+
+# weights & biases config
+PROJECT_NAME=Arabic-Nano-GPT
+JOB_TYPE=LM-Pretraining
+RUN_NAME=Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V2
+NOTES="LM Training on Arabic Data using Nano GPT2 Model Architecture"
+TAGS=Modeling,Transformers,GPT2,Language-Modeling,Arabic-Wikipedia
 
 python src/preprocess_data.py \
     --data_ckpt=$DATA_CKPT \
@@ -50,9 +59,10 @@ python src/train_causal_lm.py \
     --warmup=$WARMUP \
     --batch_size=$BATCH_SIZE \
     --accum_steps=$ACCUM_STEPS \
-    --eval_steps=100 \
-    --log_steps=100 \
+    --eval_steps=$EVAL_STEPS \
+    --log_steps=$LOG_STEPS \
+    --torch_compile \
     --model_name=$MODEL_NAME \
-    --run_name="Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V2" \
-    --notes="LM Training on Arabic Data using Nano GPT2 Model Architecture" \
-    --tags="Modeling,Transformers,GPT2,Language-Modeling,Arabic-Wikipedia"
+    --run_name=$RUN_NAME \
+    --notes=$NOTES \
+    --tags=$TAGS
