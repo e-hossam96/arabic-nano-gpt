@@ -106,3 +106,23 @@ WARMUP=0.01
 ```bash
 bash train_lm.sh
 ```
+
+## Small Batch Overfitting
+
+Before training your model for a long time and not being sure about its final state, you should experiment with a small batch using the `SPLIT_SIZE` parameter and try to bring the training loss to near zero. In the three checkpoints we have produced, we ensured that the architecture and the training step will actually bring the loss to near zero. W&B runs will be shared later to check the values.
+
+To do so, you need to define a reasonable learning rate (`LR`) for the small batch (`SPLIT_SIZE`) and train for longer using the `NUM_EPOCHS`. You should also comment the **early stopping** `callback` from the HuggingFace's `Trainer` in this step in [train_causeal_lm.py](./src/train_causal_lm.py).
+
+```python
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=tokenized_dataset["train"],
+    eval_dataset=tokenized_dataset["valid"],
+    data_collator=data_collator,
+    tokenizer=tokenizer,
+    # callbacks=[EarlyStoppingCallback(early_stopping_patience=5)],
+)
+```
+
+Once validated, you can remove the `SPLIT_SIZE` parameter, re-define the training configurations to match the full data training, and run the codes safely.
