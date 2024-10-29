@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="./assets/repository-profile.jpg" />
+</p>
+<!-- ![Profile Image](./assets/repository-profile.jpg) -->
+
 # arabic-nano-gpt
 
 Arabic Nano GPT Trained on Arabic Wikipedia Dataset from Wikimedia. This code is for education and demonstration purposes to experience the entire workflow of LLMs **pre-training** on the Nano Scale. This code is designed to load a dataset, preprocess its text, train a tokenizer on it, and lastly train a model using _Causal Language Modeling_.
