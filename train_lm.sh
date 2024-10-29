@@ -1,24 +1,58 @@
 #!/bin/bash
 
-model_name="arabic-nano-gpt-v1"
+# data config
+DATA_CKPT=wikimedia/wikipedia
+SUB_DATA=20231101.ar
+PROCESSED_DATA_PATH=data/$DATA_CKPT.csv
 
-python src/preprocess_data.py
+# tokenizer config
+BASE_MODEL=openai-community/gpt2
+MODEL_NAME=arabic-nano-gpt-v2
+MODEL_PATH=models/$MODEL_NAME
+MODEL_MAX_LENGTH=1024
+VOCAB_SIZE=16384
+
+# model config
+EMBED_SIZE=1024
+NUM_ATT_HEAD=12
+NUM_ATT_LAYERS=8
+
+# training config
+NUM_EPOCHS=1
+BATCH_SIZE=32
+ACCUM_STEPS=8
+LR=0.0001
+WD=0.000001
+WARMUP=0.0
+
+python src/preprocess_data.py \
+    --data_ckpt=$DATA_CKPT \
+    --sub_data=$SUB_DATA \
+    --split_name=train \
+    --processed_data_file_path=$PROCESSED_DATA_PATH
 
 python src/build_tokenizer.py \
-    --model_name=$model_name
+    --model_ckpt=$BASE_MODEL \
+    --data_ckpt=$DATA_CKPT \
+    --processed_data_file_path=$PROCESSED_DATA_PATH \
+    --model_max_length=$MODEL_MAX_LENGTH \
+    --vocab_size=$VOCAB_SIZE \
+    --model_name=$MODEL_NAME \
+    --target_model_path=$MODEL_PATH
 
 python src/train_causal_lm.py \
-    --n_embd=384 \
-    --n_head=6 \
-    --num_epochs=24 \
-    --lr=2e-4 \
-    --wd=1e-5 \
-    --warmup=0.01 \
-    --batch_size=64 \
-    --accum_steps=8 \
-    --eval_steps=5000 \
-    --log_steps=2000 \
-    --model_name=$model_name \
-    --run_name="Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V1" \
+    --n_embd=$EMBED_SIZE \
+    --n_head=$NUM_ATT_HEAD \
+    --n_layer=$NUM_ATT_LAYERS \
+    --num_epochs=$NUM_EPOCHS \
+    --lr=$LR \
+    --wd=$WD \
+    --warmup=$WARMUP \
+    --batch_size=$BATCH_SIZE \
+    --accum_steps=$ACCUM_STEPS \
+    --eval_steps=100 \
+    --log_steps=100 \
+    --model_name=$MODEL_NAME \
+    --run_name="Arabic-NanoGPT-LM-on-Wikipedia-Docs-23-V2" \
     --notes="LM Training on Arabic Data using Nano GPT2 Model Architecture" \
     --tags="Modeling,Transformers,GPT2,Language-Modeling,Arabic-Wikipedia"
