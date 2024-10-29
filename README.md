@@ -51,3 +51,52 @@ conda activate nanogpt
 ```bash
 cp example.env .env
 ```
+
+## Execution
+
+The _bash_ script code in [train_ml.sh](./train_lm.sh) is used to define the configurations to run all the Python scripts in the `src` folder. All you need to do is to define your configurations based on your needs and run the bash script and it handle every thing as follows.
+
+- Decide on the _raw_ data and where its preprocessed version will be saved.
+
+```bash
+DATA_CKPT=wikimedia/wikipedia
+SUB_DATA=20231101.ar
+PROCESSED_DATA_PATH=data/$DATA_CKPT.csv
+```
+
+- Define the tokenizer configurations. The default is a `GPT2` based tokenizer trained from scratch on the data. After training, the tokenizer will be saved in the same directory as your intended model.
+
+```bash
+BASE_MODEL=openai-community/gpt2
+MODEL_NAME=arabic-nano-gpt-v2
+MODEL_PATH=models/$MODEL_NAME
+MODEL_MAX_LENGTH=1024
+VOCAB_SIZE=16384
+```
+
+- Define the end model configurations. The more the parameters, the larger the model and the longer it needs to train on the data.
+
+```bash
+EMBED_SIZE=384
+NUM_ATT_HEAD=6
+NUM_ATT_LAYERS=8
+```
+
+- Define the training parameters. Make sure to choose reasonable values. The default is to train the model on the entire data but this will take so long. You can define another parameter called `SPLIT_SIZE` and use it as input to the [train_causeal_lm.py](./src/train_causal_lm.py) to select a small sample of the data.
+
+```bash
+NUM_EPOCHS=8
+BATCH_SIZE=32
+ACCUM_STEPS=8
+EVAL_STEPS=5000
+LOG_STEPS=2000
+LR=0.0001
+WD=0.000001
+WARMUP=0.01
+```
+
+- Run the script inside the activated `nanogpt` conda environment and wait tell the results are logged on your **Weights & Biased** account.
+
+```bash
+bash train_lm.sh
+```
