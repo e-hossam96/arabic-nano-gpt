@@ -3,15 +3,16 @@
 </p>
 <!-- ![Profile Image](./assets/repository-profile.jpg) -->
 
-<center>
+<div style="text-align: center;">
 
-| Model Name         | Parameters | Size  |
-| ------------------ | ---------- | ----- |
-| arabic-nano-gpt-v0 | 5 M        | 26 MB |
-| arabic-nano-gpt-v1 | 10 M       | 40 MB |
-| arabic-nano-gpt-v2 | 20 M       | 90 MB |
+| Model Name             | Parameters | Size  |
+|------------------------|------------|-------|
+| arabic-nano-gpt-v0     | 5 M        | 26 MB |
+| arabic-nano-gpt-v0     | 10 M       | 40 MB |
+| arabic-nano-gpt-v0     | 20 M       | 90 MB |
 
-</center>
+</div>
+
 
 # arabic-nano-gpt
 
