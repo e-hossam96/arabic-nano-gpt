@@ -7,11 +7,11 @@
 
 Arabic Nano GPT Trained on Arabic Wikipedia Dataset from Wikimedia. This code is for education and demonstration purposes to experience the entire workflow of LLMs **pre-training** on the Nano Scale. This code is designed to load a dataset, preprocess its text, train a tokenizer on it, and lastly train a model using _Causal Language Modeling_.
 
-| Model Name         | Parameters | Size  |
-| ------------------ | ---------- | ----- |
-| arabic-nano-gpt-v0 | 5 M        | 26 MB |
-| arabic-nano-gpt-v0 | 10 M       | 40 MB |
-| arabic-nano-gpt-v0 | 20 M       | 90 MB |
+|     Model Name     | Parameters | Size  |
+| :----------------: | :--------: | :---: |
+| arabic-nano-gpt-v0 |    5 M     | 26 MB |
+| arabic-nano-gpt-v0 |    10 M    | 40 MB |
+| arabic-nano-gpt-v0 |    20 M    | 90 MB |
 
 ## Setup
 
