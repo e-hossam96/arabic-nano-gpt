@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/repository-profile.jpg" />
+  <img src="./assets/repository-profile.jpg" width=320, height=320/>
 </p>
 <!-- ![Profile Image](./assets/repository-profile.jpg) -->
 
