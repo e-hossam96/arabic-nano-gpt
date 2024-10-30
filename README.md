@@ -157,6 +157,24 @@ We have trained three different model sizes that have different number of attent
 | arabic-nano-gpt-v1 |   10.6 M   | 46.7 MB |
 | arabic-nano-gpt-v2 |   20.9 M   | 91.9 MB |
 
+The following table compares all the training and architecture configurations used for the three models.
+
+| Parameter \ Molel Name | arabic-nano-gpt-v0 | arabic-nano-gpt-v1 | arabic-nano-gpt-v2 |
+| :--------------------: | :----------------: | :----------------: | :----------------: |
+|      Dataset Size      |       4.86M        |       4.86M        |       4.86M        |
+|       Vocab Size       |        8192        |        8192        |       16384        |
+|     Context Length     |        1024        |        1024        |        1024        |
+|     Embedding Size     |        256         |        384         |        384         |
+|    Attention Layers    |         4          |         4          |         8          |
+|    Attention Heads     |         4          |         4          |         6          |
+|       Num Epochs       |         24         |         24         |         8          |
+|     Early Stopping     |        True        |        True        |        True        |
+|     Training Steps     |        150K        |        200K        |        130K        |
+|       Batch Size       |        256         |        512         |        256         |
+|     Learning Rate      |       0.001        |       0.0002       |       0.0001       |
+|      Weight Decay      |      0.00001       |      0.00001       |      0.000001      |
+|      Warmup Ratio      |        0.01        |        0.01        |        0.01        |
+
 ## Performance Comparison
 
 ## Conclusions
