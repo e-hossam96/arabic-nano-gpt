@@ -221,6 +221,11 @@ prompt = """المحرك النفاث هو محرك ينفث الموائع (ا�
 
 ## Credits
 
+- [Andrej Karpath - Let's build GPT: from scratch, in code, spelled out.](https://youtu.be/kCc8FmEb1nY?si=8JT3htJzRgmVOwZQ)
+- [Andrej Karpath - nanoGPT](https://github.com/karpathy/nanoGPT)
+- [Pretraining a 124-M Parameter GPT-2 Language Model](https://wandb.ai/bkkaggle/lm-finetuning/reports/Pretraining-a-124-M-Parameter-GPT-2-Language-Model--VmlldzoyMjg4NzA)
+- [AraGPT2: Pre-Trained Transformer for Arabic Language Generation](https://aclanthology.org/2021.wanlp-1.21/)
+
 ## License
 
 MIT
