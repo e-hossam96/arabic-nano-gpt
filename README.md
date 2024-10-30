@@ -139,6 +139,20 @@ The resulting docs are saved into a _CSV_ file to avoid extra-splitting on new l
 
 ## Tokenization
 
+We didn't do much to train the tokenizer. We just used the `train_from_iterator` method from the _GPT2 pretrained tokenizer_ and passed it a generator (defined below) of all the docs to train.
+
+```python
+  def get_dataset_iterator(data, batch_size: int = 1024):
+      for i in range(0, len(data), batch_size):
+          yield data[i : i + batch_size]["text"]
+```
+
+The tokenizer produced number of tokens distribution for all the high quality docs that is consistent with the length distribution from above.
+
+![Number of Tokens Distribution](./assets/num-tokens-dist-quality-docs.png)
+
+We then saved the tokenizer to the same directory of the model (to be trained in the following step).
+
 ## GPT2-Based Models
 
 ## Performance Comparison
