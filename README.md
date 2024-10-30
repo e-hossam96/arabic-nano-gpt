@@ -177,6 +177,46 @@ The following table compares all the training and architecture configurations us
 
 ## Performance Comparison
 
+The held-out test set loss values are reported for the three checkpoints in the following table as a quntative measure.
+
+|     Model Name     | Test Loss |
+| :----------------: | :-------: |
+| arabic-nano-gpt-v0 |   3.288   |
+| arabic-nano-gpt-v1 |   3.029   |
+| arabic-nano-gpt-v2 |    --     |
+
+For a qualitative measure, the three models were tested against the following prompt to complete. The generation parameters were cherry picked to provide decent generations. Also, the training logs and the generations for each model model is presented under the respective model sections.
+
+```python
+prompt = """المحرك النفاث هو محرك ينفث الموائع (الماء أو الهواء) بسرعة فائقة \
+لينتج قوة دافعة اعتمادا على مبدأ قانون نيوتن الثالث للحركة. \
+هذا التعريف الواسع للمحركات النفاثة يتضمن أيضا"""
+```
+
+### V0
+
+#### Generations
+
+""
+
+#### Logs
+
+![Train Loss](./assets/arabic-nano-gpt-v0-train-loss.png)
+![Eval Loss](./assets/arabic-nano-gpt-v0-eval-loss.png)
+
+### V1
+
+#### Generations
+
+""
+
+#### Logs
+
+![Train Loss](./assets/arabic-nano-gpt-v1-train-loss.png)
+![Eval Loss](./assets/arabic-nano-gpt-v1-eval-loss.png)
+
+### V2
+
 ## Conclusions
 
 ## Credits
