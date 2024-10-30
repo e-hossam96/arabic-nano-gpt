@@ -129,6 +129,14 @@ Once validated, you can remove the `SPLIT_SIZE` parameter, re-define the trainin
 
 ## Data Pre-processing
 
+For this step, we followed simple steps to preprocess and clean the text. The dataset is already almost clean but we needed to further preprocess it before training. We extracted all the paragraphs by splitting on the `\n\n` characters after each paragraph in an article. Also, we removed all the diacritics using the `strip_tashkeel` function from `PyAraby` and padded all the punctuations using white spaces as per the **AraGPT2** paper. This left us with around **8.5 Million** paragraphs with the following length distribution.
+
+![Length Distribution of Original Paragraphs](./assets/length-dist-all-docs.png)
+
+We further removed all the sentences that are less than _60_ and more than _1250_ characters to have consistent-length paragraphs (docs from now on). This left us with around **4.8 Million** docs of high quality of meaning (at least!).
+
+The resulting docs are saved into a _CSV_ file to avoid extra-splitting on new line characters when saved into a text file.
+
 ## Tokenization
 
 ## GPT2-Based Models
