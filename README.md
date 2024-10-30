@@ -227,6 +227,8 @@ prompt = """المحرك النفاث هو محرك ينفث الموائع (ا�
 - [Andrej Karpath - nanoGPT](https://github.com/karpathy/nanoGPT)
 - [Pretraining a 124-M Parameter GPT-2 Language Model](https://wandb.ai/bkkaggle/lm-finetuning/reports/Pretraining-a-124-M-Parameter-GPT-2-Language-Model--VmlldzoyMjg4NzA)
 - [AraGPT2: Pre-Trained Transformer for Arabic Language Generation](https://aclanthology.org/2021.wanlp-1.21/)
+- [Testing Prompt Source](https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B1%D9%83_%D9%86%D9%81%D8%A7%D8%AB)
+- [Profile Image Generator, prompt "Tiny AI Robot"](https://deepai.org/machine-learning-model/text2img)
 
 ## License
 
