@@ -7,6 +7,8 @@
 
 Arabic Nano GPT Trained on Arabic Wikipedia Dataset from Wikimedia. This code is for education and demonstration purposes to experience the entire workflow of LLMs **pre-training** on the Nano Scale. This code is designed to load a dataset, preprocess its text, train a tokenizer on it, and lastly train a model using _Causal Language Modeling_.
 
+_Link to models collection on HuggingFace_ -- [Arabic Nano GPT Models](https://huggingface.co/collections/e-hossam96/arabic-nano-gpt-models-67205cb4ddbde77be9c7b532)
+
 ## Setup
 
 This environment is setup to work on a Linux platform. Make sure to use WSL2 on windows.
