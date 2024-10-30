@@ -185,7 +185,7 @@ The held-out test set loss values are reported for the three checkpoints in the 
 | :----------------: | :-------: |
 | arabic-nano-gpt-v0 |   3.288   |
 | arabic-nano-gpt-v1 |   3.029   |
-| arabic-nano-gpt-v2 |    --     |
+| arabic-nano-gpt-v2 |   3.256   |
 
 For a qualitative measure, the three models were tested against the following prompt to complete. The generation parameters were cherry picked to provide decent generations. Also, the training logs and the generations for each model model is presented under the respective model sections.
 
@@ -218,6 +218,15 @@ prompt = """المحرك النفاث هو محرك ينفث الموائع (ا�
 ![Eval Loss](./assets/arabic-nano-gpt-v1-eval-loss.png)
 
 ### V2
+
+#### Generations
+
+""
+
+#### Logs
+
+![Train Loss](./assets/arabic-nano-gpt-v2-train-loss.png)
+![Eval Loss](./assets/arabic-nano-gpt-v2-eval-loss.png)
 
 ## Conclusions
 
