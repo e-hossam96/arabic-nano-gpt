@@ -250,6 +250,10 @@ prompt = """المحرك النفاث هو محرك ينفث الموائع (ا�
 ![Train Loss](./assets/arabic-nano-gpt-v2-train-loss.png)
 ![Eval Loss](./assets/arabic-nano-gpt-v2-eval-loss.png)
 
+## Future Directions
+
+TO BE ADDED
+
 ## Conclusions
 
 This is focused on using HuggingFace's Transformers and Tokenizers along with reporting the training logs on Weights & Biases. These tools accelerate the development process once you understand how to use them properly. All the three models were trained on A4000 and RTX 4060 Ti instances from [Vast.ai](https://vast.ai/) and costed only $15. Preparations and experimentations were executed on my RTX 3050 Ti GPU.
