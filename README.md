@@ -7,12 +7,6 @@
 
 Arabic Nano GPT Trained on Arabic Wikipedia Dataset from Wikimedia. This code is for education and demonstration purposes to experience the entire workflow of LLMs **pre-training** on the Nano Scale. This code is designed to load a dataset, preprocess its text, train a tokenizer on it, and lastly train a model using _Causal Language Modeling_.
 
-|     Model Name     | Parameters | Size  |
-| :----------------: | :--------: | :---: |
-| arabic-nano-gpt-v0 |    5 M     | 26 MB |
-| arabic-nano-gpt-v0 |    10 M    | 40 MB |
-| arabic-nano-gpt-v0 |    20 M    | 90 MB |
-
 ## Setup
 
 This environment is setup to work on a Linux platform. Make sure to use WSL2 on windows.
@@ -154,6 +148,14 @@ The tokenizer produced number of tokens distribution for all the high quality do
 We then saved the tokenizer to the same directory of the model (to be trained in the following step).
 
 ## GPT2-Based Models
+
+We have trained three different model sizes that have different number of attention heads and layers and have different embedding dimention. The context length (also the number of positions) is left to be _1024_ which the default for the **GPT2** model. The models number of parameters and memory footprint is provided in the following table.
+
+|     Model Name     | Parameters | Size  |
+| :----------------: | :--------: | :---: |
+| arabic-nano-gpt-v0 |    5 M     | 26 MB |
+| arabic-nano-gpt-v1 |    10 M    | 40 MB |
+| arabic-nano-gpt-v2 |    20 M    | 90 MB |
 
 ## Performance Comparison
 
