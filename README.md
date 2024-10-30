@@ -151,11 +151,11 @@ We then saved the tokenizer to the same directory of the model (to be trained in
 
 We have trained three different model sizes that have different number of attention heads and layers and have different embedding dimention. The context length (also the number of positions) is left to be _1024_ which the default for the **GPT2** model. The models number of parameters and memory footprint is provided in the following table.
 
-|     Model Name     | Parameters | Size  |
-| :----------------: | :--------: | :---: |
-| arabic-nano-gpt-v0 |    5 M     | 26 MB |
-| arabic-nano-gpt-v1 |    10 M    | 40 MB |
-| arabic-nano-gpt-v2 |    20 M    | 90 MB |
+|     Model Name     | Parameters |  Size   |
+| :----------------: | :--------: | :-----: |
+| arabic-nano-gpt-v0 |   5.5 M    | 26.3 MB |
+| arabic-nano-gpt-v1 |   10.6 M   | 46.7 MB |
+| arabic-nano-gpt-v2 |   20.9 M   | 91.9 MB |
 
 ## Performance Comparison
 
