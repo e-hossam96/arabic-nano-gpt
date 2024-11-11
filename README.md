@@ -266,6 +266,7 @@ This is focused on using HuggingFace's Transformers and Tokenizers along with re
 - [AraGPT2: Pre-Trained Transformer for Arabic Language Generation](https://aclanthology.org/2021.wanlp-1.21/)
 - [Testing Prompt Source](https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%B1%D9%83_%D9%86%D9%81%D8%A7%D8%AB)
 - [Profile Image Generator, prompt "Tiny AI Robot"](https://deepai.org/machine-learning-model/text2img)
+- [Pretraining LLMs - Upstage - DLAI](https://www.deeplearning.ai/short-courses/pretraining-llms/)
 
 ## License
 
