@@ -252,7 +252,11 @@ prompt = """المحرك النفاث هو محرك ينفث الموائع (ا�
 
 ## Future Directions
 
-TO BE ADDED
+- Cut down model training time and data needed using weight sharing from other LLMs. [Currently Exploring]
+- Add evaluation methods other than loss comparison.
+- Extend model training using Supervised Fine-Tuning.
+- Align model responses with human feedbacks using Reinforcement Learning (RLHF).
+- Extend the code to handle different datasets in all stages (Pretraining, SFT, RLHF).
 
 ## Conclusions
 
