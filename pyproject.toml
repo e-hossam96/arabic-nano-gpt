@@ -1,0 +1,40 @@
+[project]
+name = "arabic-nano-gpt"
+version = "0.1.0"
+description = "arabic-nano-gpt"
+readme = "README.md"
+authors = [
+    { name = "e-hossam96", email = "ehh.hossam@gmail.com" }
+]
+requires-python = ">=3.12.10"
+dependencies = [
+    "accelerate>=1.6.0",
+    "datasets>=3.5.0",
+    "emoji>=2.14.1",
+    "ipywidgets>=8.1.6",
+    "jupyterlab>=4.4.1",
+    "matplotlib>=3.10.1",
+    "nltk>=3.9.1",
+    "notebook>=7.4.1",
+    "numpy>=2.2.5",
+    "pandas>=2.2.3",
+    "pyarabic>=0.6.15",
+    "pyarrow>=20.0.0",
+    "python-dotenv>=1.1.0",
+    "rich[jupyter]>=14.0.0",
+    "scikit-learn>=1.6.1",
+    "scipy>=1.15.2",
+    "seaborn>=0.13.2",
+    "torch<2.7.0",
+    "tqdm>=4.67.1",
+    "transformers>=4.51.3",
+    "wandb>=0.19.10",
+]
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu124" },
+]
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
